@@ -1,0 +1,21 @@
+.box{
+    background: rgba(74, 0, 55, 0);
+    /* box-shadow: 50px 0px 200px 10px rgba(255, 255, 255, 0.449), inset -10px -10px 50px -30px white; */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    z-index: 10 !important;
+    animation:5s infinite alternate rounded;
+}
+@keyframes rounded {
+   0%{
+        box-shadow: 50px 0px 200px 10px rgba(255, 255, 255, 0.449), inset -10px 0px 50px -30px white;
+    }
+    50%{
+        box-shadow: 50px 0px 200px 10px rgba(255, 255, 255, 0.449), inset 0px -10px 50px -30px white;
+    }
+    100%{
+        box-shadow: 50px 0px 200px 10px rgba(255, 255, 255, 0.449), inset -10px 0px 50px -30px white;
+    } 
+   
+}

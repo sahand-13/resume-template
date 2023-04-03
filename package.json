@@ -1,0 +1,40 @@
+{
+  "name": "task-manager",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@iconify/react": "^4.1.0",
+    "@mui/material": "^5.11.15",
+    "@reduxjs/toolkit": "^1.9.3",
+    "axios": "^1.3.4",
+    "framer-motion": "^10.9.2",
+    "highlight.js": "^11.7.0",
+    "i18n": "^0.15.1",
+    "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.4.3",
+    "react-lazy-load-image-component": "^1.5.6",
+    "react-router-dom": "^6.9.0",
+    "react-slick": "^0.29.0",
+    "redux": "^4.2.1",
+    "redux-persist": "^6.0.0",
+    "simplebar": "^6.2.4",
+    "simplebar-react": "^3.2.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "vite": "^4.2.0"
+  }
+}
