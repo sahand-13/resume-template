@@ -1,0 +1,29 @@
+.circle {
+    background: rgba(4, 66, 1, 0.683);
+    box-shadow:  inset -10px -10px 50px -30px white;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    z-index:4 !important;
+    opacity: 0.3;
+   
+  
+  }
+  
+  .circle.sm {
+    width:10px;
+
+    height: 10px;
+  }
+  
+  .circle.md {
+    width:15px;
+    height: 15px;
+  }
+  
+  .circle.lg {
+    width: 25px;
+    height: 25px;
+  }
