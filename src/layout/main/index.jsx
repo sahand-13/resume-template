@@ -22,7 +22,7 @@ export default function MainLayout() {
       <Outlet />
 
       <Box sx={{ flexGrow: 1 }} />
-      {/* <MainFooter /> */}
+      <MainFooter />
 
       {/* {!isHome ? (
         <MainFooter />

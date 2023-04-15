@@ -13,10 +13,18 @@ import { MotionContainer, varFade } from '../../components/animate';
 import profilephoto from '../../assets/profile.jpg';
 import FollowPointer from '../../components/followPointer';
 import { Pointer } from '../../components/followPointer/newOne/Pointer';
+import Logo from '../../components/Logo';
+import { Timeline, Tween } from 'react-gsap';
+import { useEffect } from 'react';
+import { useRef } from 'react';
+import { Bounce, Elastic, Linear, Power4, gsap } from 'gsap';
+import { useState } from 'react';
+
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(m.div)(({ theme }) => ({
   position: 'relative',
+
   backgroundColor: theme.palette.grey[900],
   [theme.breakpoints.up('md')]: {
     top: 0,
@@ -73,6 +81,46 @@ const HeroImgStyle = styled(m.img)(({ theme }) => ({
 
 export default function HomeHero() {
   // const theme = useTheme();
+  const [animateReplay, setAnimateReplay] = useState(false);
+  const SVGRef = useRef();
+  useEffect(() => {
+    animate();
+  }, []);
+
+  function animate() {
+    if (!animateReplay) {
+      setAnimateReplay(true);
+      const el = SVGRef.current;
+      gsap.fromTo(
+        el,
+        { x: -100, y: -800, scale: 10 },
+        {
+          x: -100,
+          y: 0,
+          scale: 0.5,
+          rotate: 720,
+          duration: 3,
+          ease: Bounce.easeOut,
+        }
+      );
+      gsap.fromTo(el, { x: -100 }, { x: 450, duration: 2, delay: 3.5 });
+      gsap.fromTo(
+        el,
+        { x: 450 },
+        {
+          x: 0,
+          rotate: 3600,
+          duration: 2,
+          filter: 'drop-shadow(2px 2px 0px red',
+          scale: 1,
+          delay: 6,
+          onComplete: () => {
+            setAnimateReplay(false);
+          },
+        }
+      );
+    }
+  }
 
   return (
     <MotionContainer>
@@ -100,9 +148,11 @@ export default function HomeHero() {
                     <br />I am
                   </Typography>
                 </m.div>
-                <m.div variants={varFade().inUp}>
-                  <Typography component="span" variant="h1" sx={{ color: 'primary.main' }}>
-                    &nbsp;Sahand Golkar
+                <m.div variants={varFade().inUp} onClick={animate}>
+                  <Typography component="span" variant="h1" sx={{ color: 'primary.main', display: 'flex' }}>
+                    &nbsp;S
+                    <Logo ref={SVGRef} width="45pt" height="60pt" disabledLink />
+                    &nbsp;hand Golkar{' '}
                   </Typography>
                 </m.div>
               </Typography>

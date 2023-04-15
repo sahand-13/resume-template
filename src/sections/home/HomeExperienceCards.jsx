@@ -155,7 +155,11 @@ export default function HomeExperienceCards() {
                   return (
                     <Timeline totalProgress={progress}>
                       <Tween
-                        from={{ y: '-50vh', x: index === 0 ? -200 : index === 2 && 200, opacity: 0 }}
+                        from={{
+                          y: '-50vh',
+                          x: index === 0 ? -200 : index === 2 && 200,
+                          opacity: 0,
+                        }}
                         to={{ y: '-10vh', x: 0, opacity: 1 }}
                         duration={1000}
                         stagger={10}

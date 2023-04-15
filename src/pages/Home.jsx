@@ -7,7 +7,8 @@ import FollowPointer from '../components/followPointer';
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 import { Pointer } from '../components/followPointer/newOne/Pointer';
-import HomeDarkMode from '../sections/home/HomeDarkMode';
+import HomeOtherSkills from '../sections/home/HomeOtherSkills';
+import HomeLanguageSoftSkills from '../sections/home/HomeLanguageSoftSkills';
 // ----------------------------------------------------------------------
 
 const RootStyle = styled('div')(() => ({
@@ -25,26 +26,14 @@ const Home = () => {
   return (
     <Pointer>
       <RootStyle>
-        {/* <FollowPointer> */}
         <HomeHero />
         <ContentStyle>
           <HomeExperienceCards />
 
-          {/* <HomeHugePackElements /> */}
+          <HomeOtherSkills />
 
-          <HomeDarkMode />
-
-          {/*  <HomeColorPresets />
-
-        <HomeCleanInterfaces />
-
-        <HomePricingPlans />
-
-        <HomeLookingFor />
-
-        <HomeAdvertisement /> */}
+          <HomeLanguageSoftSkills />
         </ContentStyle>
-        {/* </FollowPointer> */}
       </RootStyle>
     </Pointer>
   );

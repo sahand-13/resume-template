@@ -12,26 +12,12 @@ import SocialsButton from '../../components/SocialsButton';
 
 const LINKS = [
   {
-    headline: 'Minimal',
-    children: [
-      { name: 'About us', href: PATH_PAGE.about },
-      { name: 'Contact us', href: PATH_PAGE.contact },
-      { name: 'FAQs', href: PATH_PAGE.faqs },
-    ],
-  },
-  {
-    headline: 'Legal',
-    children: [
-      { name: 'Terms and Condition', href: '#' },
-      { name: 'Privacy Policy', href: '#' },
-    ],
+    headline: 'Birth Information',
+    children: [{ name: 'Birth Day : 1376 / 2 / 13' }, { name: 'Birth Location : Tehran,Iran' }],
   },
   {
     headline: 'Contact',
-    children: [
-      { name: 'support@minimals.cc', href: '#' },
-      { name: 'Los Angeles, 359  Hidden Valley Road', href: '#' },
-    ],
+    children: [{ name: 'Number : +989359550274' }, { name: 'Email : Golkar.sahand@gmail.com' }],
   },
 ];
 
@@ -46,67 +32,57 @@ export default function MainFooter() {
   return (
     <RootStyle>
       <Divider />
-      <Container sx={{ pt: 10 }}>
+      <Container sx={{ pt: 5 }}>
         <Grid
           container
           justifyContent={{ xs: 'center', md: 'space-between' }}
-          sx={{ textAlign: { xs: 'center', md: 'left' } }}
+          sx={{ textAlign: { xs: 'center', md: 'left' }, mb: 2 }}
         >
-          <Grid item xs={12} sx={{ mb: 3 }}>
-            <Logo sx={{ mx: { xs: 'auto', md: 'inherit' } }} />
+          <Grid item xs={12} sx={{ mb: 3, textAlign: 'center' }}>
+            {' '}
           </Grid>
-          <Grid item xs={8} md={3}>
-            <Typography variant="body2" sx={{ pr: { md: 5 } }}>
-              The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI
-              ©, ready to be customized to your style.
+          <Grid item xs={6} md={3}>
+            <Typography variant="body2" sx={{ textAlign: 'center' }}>
+              <Logo
+                width={'50pt'}
+                height={'40pt'}
+                sx={{
+                  width: '100%',
+                  mx: { xs: 'auto', md: 'inherit' },
+                  mb: 2,
+                }}
+                disabledLink
+              />
+              Sahand Golkar
             </Typography>
 
-            <Stack
-              direction="row"
-              justifyContent={{ xs: 'center', md: 'flex-start' }}
-              sx={{ mt: 5, mb: { xs: 5, md: 0 } }}
-            >
-              <SocialsButton sx={{ mx: 0.5 }} />
+            <Stack direction="row" justifyContent={{ xs: 'center', md: 'center' }}>
+              <SocialsButton
+                links={{
+                  linkedin: 'https://www.linkedin.com/in/sahand-golkar-8a79b5210',
+                  github: 'https://github.com/sahand-13',
+                }}
+              />
             </Stack>
           </Grid>
 
-          <Grid item xs={12} md={7}>
-            <Stack spacing={5} direction={{ xs: 'column', md: 'row' }} justifyContent="space-between">
+          <Grid item xs={12} md={7} sx={{ justifyContent: 'center' }}>
+            <Stack spacing={20} direction={{ xs: 'column', md: 'row' }} justifyContent="center">
               {LINKS.map((list) => (
                 <Stack key={list.headline} spacing={2}>
                   <Typography component="p" variant="overline">
                     {list.headline}
                   </Typography>
                   {list.children.map((link) => (
-                    <Link
-                      to={link.href}
-                      key={link.name}
-                      color="inherit"
-                      variant="body2"
-                      component={RouterLink}
-                      sx={{ display: 'block' }}
-                    >
+                    <Typography key={link.name} color="inherit" variant="caption" sx={{ display: 'block' }}>
                       {link.name}
-                    </Link>
+                    </Typography>
                   ))}
                 </Stack>
               ))}
             </Stack>
           </Grid>
         </Grid>
-
-        <Typography
-          component="p"
-          variant="body2"
-          sx={{
-            mt: 10,
-            pb: 5,
-            fontSize: 13,
-            textAlign: { xs: 'center', md: 'left' },
-          }}
-        >
-          © 2021. All rights reserved
-        </Typography>
       </Container>
     </RootStyle>
   );

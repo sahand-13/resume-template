@@ -1,33 +1,5 @@
-import { PATH_DASHBOARD } from "../routes/paths";
+export const HOST_API = '';
 
-export const HOST_API = "";
-
-export const FIREBASE_API = {
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: "",
-  measurementId: "",
-};
-
-export const COGNITO_API = {
-  userPoolId: "",
-  clientId: "",
-};
-
-export const AUTH0_API = {
-  clientId: "",
-  domain: "",
-};
-
-export const MAPBOX_API = "";
-
-// ROOT PATH AFTER LOGIN SUCCESSFUL
-export const PATH_AFTER_LOGIN = PATH_DASHBOARD.general.app; // as '/dashboard/app'
-// LAYOUT
 // ----------------------------------------------------------------------
 
 export const HEADER = {
@@ -50,4 +22,16 @@ export const NAVBAR = {
 export const ICON = {
   NAVBAR_ITEM: 22,
   NAVBAR_ITEM_HORIZONTAL: 20,
+};
+export const PATH_AFTER_LOGIN = ''; // as '/dashboard/app'
+// SETTINGS
+// Please remove `localStorage` when you set settings.
+// ----------------------------------------------------------------------
+
+export const defaultSettings = {
+  themeMode: 'light',
+  themeDirection: 'ltr',
+  themeColorPresets: 'default',
+  themeLayout: 'horizontal',
+  themeStretch: false,
 };

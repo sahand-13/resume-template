@@ -5,16 +5,22 @@ import { store } from './redux/store';
 import ThemeProvider from './theme';
 import { MotionLazyContainer } from './components/animate';
 import FollowPointer from './components/followPointer';
+import { SettingsProvider } from './contexts/SettingsContext';
+import ThemeColorPresets from './components/ThemeColorPresets';
 
 function App() {
   return (
     <ReduxProvider store={store}>
       <BrowserRouter>
-        <ThemeProvider>
-          <MotionLazyContainer>
-            <Router />
-          </MotionLazyContainer>
-        </ThemeProvider>
+        <SettingsProvider>
+          <ThemeProvider>
+            <ThemeColorPresets>
+              <MotionLazyContainer>
+                <Router />
+              </MotionLazyContainer>
+            </ThemeColorPresets>
+          </ThemeProvider>
+        </SettingsProvider>
       </BrowserRouter>
     </ReduxProvider>
   );

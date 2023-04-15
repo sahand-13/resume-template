@@ -1,7 +1,9 @@
 import { useRef, forwardRef, useImperativeHandle, useEffect } from 'react';
 import { gsap } from 'gsap';
 import './Pointer.css';
+import { useTheme } from '@mui/material';
 const Circle = forwardRef(({ size, delay }, ref) => {
+  const theme = useTheme();
   const el = useRef();
 
   useImperativeHandle(
@@ -17,7 +19,7 @@ const Circle = forwardRef(({ size, delay }, ref) => {
     [delay]
   );
 
-  return <div className={`circle ${size}`} ref={el}></div>;
+  return <div className={`circle ${size}`} style={{ background: theme.palette.primary.main }} ref={el}></div>;
 });
 
 export function Pointer({ children }) {
@@ -28,7 +30,6 @@ export function Pointer({ children }) {
 
   useEffect(() => {
     const { innerWidth, innerHeight } = window;
-    debugger;
     circleRefs.current.forEach((ref, index) => ref.moveTo(innerWidth / 2, innerHeight / 2));
 
     const onMove = ({ clientX, clientY }) => {
