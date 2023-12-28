@@ -146,7 +146,7 @@ export default function MainHeader() {
       {isDesktop && (
         <RadioGroup name="themeColorPresets" value={themeColorPresets} onChange={onChangeColor} sx={{ my: 20 }}>
           <Stack
-            direction={{ xs: 'row', lg: 'column' }}
+            direction={{ xs: 'column', lg: 'column' }}
             justifyContent="center"
             spacing={1}
             sx={{

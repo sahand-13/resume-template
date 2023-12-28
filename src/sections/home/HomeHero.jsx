@@ -66,15 +66,15 @@ const HeroImgStyle = styled(m.img)(({ theme }) => ({
   zIndex: 8,
   border: '3px solid white',
   boxShadow: '0px 0px 50px 0px white,0px 0px 10px 0px white',
-  width: '100%',
+  width: '50%',
   borderRadius: '50%',
   margin: 'auto',
   position: 'absolute',
-  [theme.breakpoints.up('lg')]: {
-    right: '8%',
-    width: 'auto',
-    height: '70vh',
-  },
+  right: '8%',
+  width: 'auto',
+  height: '70vh',
+  maxWidth: '30%',
+  objectFit: 'cover',
 }));
 
 // ----------------------------------------------------------------------
@@ -159,7 +159,7 @@ export default function HomeHero() {
             </m.div>
 
             <m.div variants={varFade().inRight}>
-              <Typography sx={{ color: 'common.white' }}>Full stack web developer with 2 years experience</Typography>
+              <Typography sx={{ color: 'common.white' }}>Full stack web developer with 4 years experience</Typography>
             </m.div>
 
             <Stack spacing={2.5} alignItems="center" direction={{ xs: 'column', md: 'row' }}>

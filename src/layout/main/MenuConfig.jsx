@@ -18,16 +18,6 @@ const menuConfig = [
     icon: <Iconify icon={'eva:home-fill'} {...ICON_SIZE} />,
     path: '/',
   },
-  {
-    title: 'Task Manger',
-    path: '/TaskManager',
-    icon: <Iconify icon={'pajamas:list-task'} {...ICON_SIZE} />,
-  },
-  {
-    title: 'Documentation',
-    icon: <Iconify icon={'eva:book-open-fill'} {...ICON_SIZE} />,
-    path: PATH_DOCS,
-  },
 ];
 
 export default menuConfig;
