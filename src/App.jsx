@@ -7,7 +7,6 @@ import { MotionLazyContainer } from './components/animate';
 import FollowPointer from './components/followPointer';
 import { SettingsProvider } from './contexts/SettingsContext';
 import ThemeColorPresets from './components/ThemeColorPresets';
-
 function App() {
   return (
     <ReduxProvider store={store}>
