@@ -126,7 +126,7 @@ export default function HomeExperienceCards() {
           }}
         >
           <Controller>
-            <Scene duration={300} offset={200} pin>
+            <Scene duration={800} offset={80} pin>
               {(progress) => (
                 <Timeline totalProgress={progress}>
                   <Tween from={{ x: '1000px' }} to={{ x: '0px' }} duration={1000}>
@@ -150,7 +150,7 @@ export default function HomeExperienceCards() {
         >
           {CARDS.map((card, index) => (
             <Controller>
-              <Scene duration={300} offset={330} pin>
+              <Scene duration={1000} offset={340} pin>
                 {(progress) => {
                   return (
                     <Timeline totalProgress={progress}>
@@ -160,12 +160,12 @@ export default function HomeExperienceCards() {
                           x: index === 0 ? -200 : index === 2 && 200,
                           opacity: 0,
                         }}
-                        to={{ y: '-10vh', x: 0, opacity: 1 }}
+                        to={{ y: '0vh', x: 0, opacity: 1 }}
                         duration={1000}
                         stagger={10}
                       >
                         <div>
-                          <Scene duration={400} offset={450}>
+                          <Scene duration={600} offset={250}>
                             {(progress2) => (
                               <Timeline totalProgress={progress2}>
                                 <Tween

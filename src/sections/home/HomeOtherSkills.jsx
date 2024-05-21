@@ -64,11 +64,11 @@ export default function HomeOtherSkills() {
     <RootStyle>
       <Container sx={{ position: 'relative' }}>
         <Controller>
-          <Scene duration={800} offset={950} pin>
+          <Scene duration={800} offset={1200} pin>
             {(progress) => (
               <Timeline totalProgress={progress}>
                 <Tween
-                  from={{ x: -1500, borderRadius: '50%' }}
+                  from={{ x: 300, borderRadius: '50%' }}
                   to={{
                     x: 0,
                     rotate: 340,
@@ -103,7 +103,7 @@ export default function HomeOtherSkills() {
                     </Tween>
                   </Grid>
 
-                  <Tween from={{ y: 1000, ease: Bounce.easeInOut }} to={{ y: 0 }} duration={5000}>
+                  <Tween from={{ x: -800, ease: Bounce.easeInOut }} to={{ x: 0 }} duration={500}>
                     <Grid item xs={12} md={7} sx={{ position: 'relative' }}>
                       <HomeExperienceBarChart
                         title={'Back End Skills'}
